@@ -1,0 +1,12 @@
+0ab37b14ee143268184a2afa732241cd *DESCRIPTION
+3e2e81d2ad05f6942cb4f24bc8415189 *NAMESPACE
+b72364e719b252c1818aaa98daec0456 *R/main.R
+02a853db97d85c432016d2efabb3f172 *build/vignette.rds
+56d0812959a4bfeb4ac2e1b00de6775f *inst/doc/who_vignette.R
+689b08a65bcf5bd6cb5bf3cda389f494 *inst/doc/who_vignette.Rmd
+a77fe4d4996cb43995fc6e4cc11b700d *inst/doc/who_vignette.html
+f3fb09277a85425805ead44bbbb0f395 *man/get_codes.Rd
+cf1385d087405cd5dd44a815bedd5644 *man/get_data.Rd
+45b8f110498aead607e7811ec6ba1d3f *tests/testthat.R
+c66d7f988e012765ae666298e5e97a42 *tests/testthat/tests.R
+689b08a65bcf5bd6cb5bf3cda389f494 *vignettes/who_vignette.Rmd
