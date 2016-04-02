@@ -10,7 +10,7 @@
 
 <meta name="author" content="Eric Persson" />
 
-<meta name="date" content="2016-02-04" />
+<meta name="date" content="2016-04-02" />
 
 <title>Programmatic Data Retrieval from the WHO</title>
 
@@ -54,7 +54,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <div id="header">
 <h1 class="title">Programmatic Data Retrieval from the WHO</h1>
 <h4 class="author"><em>Eric Persson</em></h4>
-<h4 class="date"><em>2016-02-04</em></h4>
+<h4 class="date"><em>2016-04-02</em></h4>
 </div>
 
 
@@ -78,7 +78,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 
 codes &lt;-<span class="st"> </span><span class="kw">get_codes</span>()
 <span class="kw">glimpse</span>(codes)</code></pre>
-<pre><code>## Observations: 2,144
+<pre><code>## Observations: 2,161
 ## Variables: 3
 ## $ label   (chr) &quot;MDG_0000000001&quot;, &quot;MDG_0000000003&quot;, &quot;MDG_0000000005&quot;, ...
 ## $ display (chr) &quot;Infant mortality rate (probability of dying between b...
@@ -89,11 +89,11 @@ codes &lt;-<span class="st"> </span><span class="kw">get_codes</span>()
 <pre><code>## Source: local data frame [3 x 3]
 ## 
 ##           label                                         display
-##           (chr)                                           (chr)
+##           &lt;chr&gt;                                           &lt;chr&gt;
 ## 1 WHOSIS_000001                Life expectancy at birth (years)
 ## 2 WHOSIS_000002 Healthy life expectancy (HALE) at birth (years)
 ## 3 WHOSIS_000015               Life expectancy at age 60 (years)
-## Variables not shown: url (chr)</code></pre>
+## Variables not shown: url &lt;chr&gt;.</code></pre>
 <p>Having found the series of interest (in the <code>label</code> column), we can easily retrieve the data and, for example, make a chart:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
 
@@ -102,16 +102,16 @@ df &lt;-<span class="st"> </span><span class="kw">get_data</span>(<span class="s
 <span class="kw">head</span>(df)</code></pre>
 <pre><code>## Source: local data frame [6 x 8]
 ## 
-##   publishstate  year        sex                              gho
-##          (chr) (dbl)      (chr)                            (chr)
-## 1    Published  1990 Both sexes Life expectancy at birth (years)
-## 2    Published  2000 Both sexes Life expectancy at birth (years)
-## 3    Published  2012     Female Life expectancy at birth (years)
-## 4    Published  2000       Male Life expectancy at birth (years)
-## 5    Published  2012       Male Life expectancy at birth (years)
-## 6    Published  2000 Both sexes Life expectancy at birth (years)
-## Variables not shown: region (chr), country (chr), worldbankincomegroup
-##   (chr), value (dbl)</code></pre>
+##                country                              gho  year    sex
+##                  &lt;chr&gt;                            &lt;chr&gt; &lt;dbl&gt;  &lt;chr&gt;
+## 1              Andorra Life expectancy at birth (years)  2000 Female
+## 2 United Arab Emirates Life expectancy at birth (years)  2000 Female
+## 3  Antigua and Barbuda Life expectancy at birth (years)  1990   Male
+## 4  Antigua and Barbuda Life expectancy at birth (years)  2012   Male
+## 5  Antigua and Barbuda Life expectancy at birth (years)  1990 Female
+## 6            Australia Life expectancy at birth (years)  1990   Male
+## Variables not shown: region &lt;chr&gt;, worldbankincomegroup &lt;chr&gt;,
+##   publishstate &lt;chr&gt;, value &lt;dbl&gt;.</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">df %&gt;%<span class="st"> </span>
 <span class="st">  </span><span class="kw">filter</span>(sex ==<span class="st"> &quot;Both sexes&quot;</span>) %&gt;%<span class="st"> </span>
 <span class="st">  </span><span class="kw">group_by</span>(region, year) %&gt;%

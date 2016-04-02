@@ -20,4 +20,3 @@ test_that("get_codes(TRUE) returns a data frame with positive length and more
   expect_true(nrow(codes) > 0)
   expect_true(ncol(codes) > 3)
 })
-
